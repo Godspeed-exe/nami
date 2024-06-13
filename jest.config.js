@@ -6,7 +6,7 @@ module.exports = {
     '^(.*)../wasm/cardano_message_signing/cardano_message_signing.generated(.*)$':
       '$1../wasm/cardano_message_signing/nodejs/cardano_message_signing.generated$2',
     // blockfrost keys
-    secrets: '../../secrets.testing.js',
+    // secrets: '../../secrets.testing.js',
   },
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',

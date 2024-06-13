@@ -1148,11 +1148,18 @@ export const submitTx = async (tx) => {
     }
     throw APIError.InvalidRequest;
   }
-  const result = await blockfrostRequest(
-    `/tx/submit`,
-    { 'Content-Type': 'application/cbor' },
-    Buffer.from(tx, 'hex')
-  );
+
+  const result = await fetch('http://localhost:8090/api/submit/tx', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/cbor' },
+    body: Buffer.from(tx, 'hex'),
+  });
+
+  // const result = await blockfrostRequest(
+  //   `/tx/submit`,
+  //   { 'Content-Type': 'application/cbor' },
+  //   Buffer.from(tx, 'hex')
+  // );
   if (result.error) {
     if (result.status_code === 400)
       throw { ...TxSendError.Failure, message: result.message };
@@ -1605,17 +1612,19 @@ export const getMilkomedaData = async (ethAddress) => {
       ttl: ttl_expiry,
     };
   } else {
-    const { isAllowed } = await fetch(
-      'https://' +
-        milkomedaNetworks['c1-devnet'].backendEndpoint +
-        `/v1/isAddressAllowed?address=${ethAddress}`
-    ).then((res) => res.json());
-    const { ada, ttl_expiry, assets, current_address } = await fetch(
-      'https://' +
-        milkomedaNetworks['c1-devnet'].backendEndpoint +
-        '/v1/stargate'
-    ).then((res) => res.json());
-    const protocolMagic = milkomedaNetworks['c1-devnet'].protocolMagic;
+    const { isAllowed } = true
+    // const { isAllowed } = await fetch(
+    //   'https://' +
+    //     milkomedaNetworks['c1-devnet'].backendEndpoint +
+    //     `/v1/isAddressAllowed?address=${ethAddress}`
+    // ).then((res) => res.json());
+    // const { ada, ttl_expiry, assets, current_address } = await fetch(
+    //   'https://' +
+    //     milkomedaNetworks['c1-devnet'].backendEndpoint +
+    //     '/v1/stargate'
+    // ).then((res) => res.json());
+    // const protocolMagic = milkomedaNetworks['c1-devnet'].protocolMagic;
+    const protocolMagic = 1
     return {
       isAllowed,
       assets: [],

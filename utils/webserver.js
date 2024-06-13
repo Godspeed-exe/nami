@@ -16,7 +16,7 @@ var excludeEntriesToHotReload = options.notHotReload || [];
 for (var entryName in config.entry) {
   if (excludeEntriesToHotReload.indexOf(entryName) === -1) {
     config.entry[entryName] = [
-      'webpack-dev-server/client?http://localhost:' + env.PORT,
+      'webpack-dev-server/client?http://nami.local:' + env.PORT,
       'webpack/hot/dev-server',
     ].concat(config.entry[entryName]);
   }
@@ -38,7 +38,7 @@ var server = new WebpackDevServer(compiler, {
     overlay: false,
   },
   devMiddleware: {
-    publicPath: `http://localhost:${env.PORT}/`,
+    publicPath: `http://nami.local:${env.PORT}/`,
     writeToDisk: true,
   },
   liveReload: false,

@@ -14,7 +14,7 @@ const ASSET_PATH = process.env.ASSET_PATH || '/';
 var alias = {};
 
 // load the secrets
-var secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
+// var secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
 
 var fileExtensions = [
   'jpg',
@@ -29,9 +29,9 @@ var fileExtensions = [
   'woff2',
 ];
 
-if (fileSystem.existsSync(secretsPath)) {
-  alias['secrets'] = secretsPath;
-}
+// if (fileSystem.existsSync(secretsPath)) {
+//   alias['secrets'] = secretsPath;
+// }
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 

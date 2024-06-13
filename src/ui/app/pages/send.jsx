@@ -401,10 +401,15 @@ const Send = () => {
     };
     utxos.current = _utxos;
     _utxos = _utxos.map((utxo) => Buffer.from(utxo.to_bytes()).toString('hex'));
-    const { current_address: milkomedaAddress } = await getMilkomedaData('');
+    // const { current_address: milkomedaAddress } = await getMilkomedaData('');
+    // const { current_address: account.current.paymentAddr } = await getMilkomedaData('');
+
+    // setTxInfo({ protocolParameters, utxos: _utxos, balance, milkomedaAddress }); 
     if (!isMounted.current) return;
+    const current_address = account.current.paymentAddr
     setIsLoading(false);
-    setTxInfo({ protocolParameters, utxos: _utxos, balance, milkomedaAddress });
+    setTxInfo({ protocolParameters, utxos: _utxos, balance, current_address });
+    // setTxInfo({ protocolParameters, utxos: _utxos, balance, milkomedaAddress });
   };
 
   const objectToArray = (obj) => Object.keys(obj).map((key) => obj[key]);
