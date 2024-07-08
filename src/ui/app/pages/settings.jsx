@@ -500,7 +500,7 @@ const Network = () => {
           <option value={NETWORK_ID.mainnet}>Mainnet</option>
           <option value={NETWORK_ID.preprod}>Preprod</option>
           <option value={NETWORK_ID.preview}>Preview</option>
-          <option value={NETWORK_ID.local}>MICHIEL RULES</option>
+          <option value={NETWORK_ID.local}>UZH LOCAL</option>
         </Select>
       </Box>
       <Box height="8" />

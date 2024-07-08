@@ -71,7 +71,7 @@ export const NODE = {
   testnet: 'https://cardano-testnet.blockfrost.io/api/v0',
   preview: 'https://cardano-preview.blockfrost.io/api/v0',
   preprod: 'https://cardano-preprod.blockfrost.io/api/v0',
-  local: 'http://nami.local:3000'
+  local: 'http://cardano20.ifi.uzh.ch:3000'
 };
 
 export const NETWORK_ID = {
