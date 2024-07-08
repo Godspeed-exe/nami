@@ -1149,7 +1149,7 @@ export const submitTx = async (tx) => {
     throw APIError.InvalidRequest;
   }
 
-  const result = await fetch('http://localhost:8090/api/submit/tx', {
+  const result = await fetch('http://cardano20.ifi.uzh.ch:8090/api/submit/tx', {
     method: 'POST',
     headers: { 'Content-Type': 'application/cbor' },
     body: Buffer.from(tx, 'hex'),

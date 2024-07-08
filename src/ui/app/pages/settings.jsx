@@ -530,7 +530,7 @@ const Network = () => {
           isDisabled={!isEnabled}
           fontSize={'xs'}
           value={value}
-          placeholder="http://localhost:8090/api/submit/tx"
+          placeholder="http://cardano20.ifi.uzh.ch:8090/api/submit/tx"
           onKeyDown={(e) => {
             if (e.key == 'Enter' && value.length > 0) {
               endpointHandler();
